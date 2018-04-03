@@ -1,0 +1,201 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context="com.galacticcoders.kendoscorekeeper.MainActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/kendoka_half_left" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/kendoka_half_right" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginTop="@dimen/margin_top"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginBottom="@dimen/text_margin_bottom"
+                android:layout_marginRight="@dimen/text_margin_right"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/aka"
+                android:textAllCaps="true"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_size_title" />
+
+            <TextView
+                android:id="@+id/aka_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginBottom="@dimen/text_margin_bottom"
+                android:layout_marginRight="@dimen/text_margin_right"
+                android:fontFamily="sans-serif-light"
+                android:text="0"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_size_score" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginBottom="@dimen/button_margin_bottom"
+                android:layout_marginRight="@dimen/button_margin_right"
+                android:onClick="addOneForAka"
+                android:text="@string/menAri" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginBottom="@dimen/button_margin_bottom"
+                android:layout_marginRight="@dimen/button_margin_right"
+                android:onClick="addOneForAka"
+                android:text="@string/koteAri" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginBottom="@dimen/button_margin_bottom"
+                android:layout_marginRight="@dimen/button_margin_right"
+                android:onClick="addOneForAka"
+                android:text="@string/doAri" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginBottom="@dimen/button_margin_bottom"
+                android:layout_marginRight="@dimen/button_margin_right"
+                android:onClick="addOneForAka"
+                android:text="@string/tsukiAri" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginBottom="@dimen/button_margin_bottom"
+                android:layout_marginRight="@dimen/button_margin_right"
+                android:onClick="addHalfForShiro"
+                android:text="@string/hansoku" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginBottom="@dimen/text_margin_bottom"
+                android:layout_marginLeft="@dimen/text_margin_left"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/shiro"
+                android:textAllCaps="true"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_size_title" />
+
+            <TextView
+                android:id="@+id/shiro_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginBottom="@dimen/text_margin_bottom"
+                android:layout_marginLeft="@dimen/text_margin_left"
+                android:fontFamily="sans-serif-light"
+                android:text="0"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_size_score" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginBottom="@dimen/button_margin_bottom"
+                android:layout_marginLeft="@dimen/button_margin_left"
+                android:onClick="addOneForShiro"
+                android:text="@string/menAri" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginBottom="@dimen/button_margin_bottom"
+                android:layout_marginLeft="@dimen/button_margin_left"
+                android:onClick="addOneForShiro"
+                android:text="@string/koteAri" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginBottom="@dimen/button_margin_bottom"
+                android:layout_marginLeft="@dimen/button_margin_left"
+                android:onClick="addOneForShiro"
+                android:text="@string/doAri" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginBottom="@dimen/button_margin_bottom"
+                android:layout_marginLeft="@dimen/button_margin_left"
+                android:onClick="addOneForShiro"
+                android:text="@string/tsukiAri" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginBottom="@dimen/button_margin_bottom"
+                android:layout_marginLeft="@dimen/button_margin_left"
+                android:onClick="addHalfForAka"
+                android:text="@string/hansoku" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/button_margin_bottom"
+        android:onClick="resetScore"
+        android:text="@string/reset" />
+
+</RelativeLayout>
