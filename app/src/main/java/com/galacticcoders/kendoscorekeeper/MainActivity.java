@@ -45,30 +45,70 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Aka.
+     * Aka Score.
      */
 
     public void addOneForAka(View v) {
         akaScore = akaScore + 1;
-        displayForAka((int) akaScore);
+        if (shiroScore == 2) {
+            akaScore = akaScore - 1;
+            Toast.makeText(this, "SHIRO Won!", Toast.LENGTH_SHORT).show();
+        }
+        if (akaScore >= 2) {
+            akaScore = 2;
+            displayForAka((int) akaScore);
+            Toast.makeText(this, "AKA Won!", Toast.LENGTH_SHORT).show();
+        } else {
+            displayForAka((int) akaScore);
+        }
     }
 
     public void addHalfForAka(View v) {
         akaScore = akaScore + 0.5f;
-        displayForAka((int) akaScore);
+        if (shiroScore == 2) {
+            akaScore = akaScore - 0.5f;
+            Toast.makeText(this, "SHIRO Won!", Toast.LENGTH_SHORT).show();
+        }
+        if (akaScore >= 2) {
+            akaScore = 2;
+            displayForAka((int) akaScore);
+            Toast.makeText(this, "AKA Won!", Toast.LENGTH_SHORT).show();
+        } else {
+            displayForAka((int) akaScore);
+        }
     }
 
     /**
-     * Shiro.
+     * Shiro Score.
      */
     public void addOneForShiro(View v) {
         shiroScore = shiroScore + 1;
-        displayForShiro((int) shiroScore);
+        if (akaScore == 2) {
+            shiroScore = shiroScore - 1;
+            Toast.makeText(this, "AKA Won!", Toast.LENGTH_SHORT).show();
+        }
+        if (shiroScore >= 2) {
+            shiroScore = 2;
+            displayForShiro((int) shiroScore);
+            Toast.makeText(this, "SHIRO Won!", Toast.LENGTH_SHORT).show();
+        } else {
+            displayForShiro((int) shiroScore);
+        }
     }
 
     public void addHalfForShiro(View v) {
         shiroScore = shiroScore + 0.5f;
-        displayForShiro((int) shiroScore);
+        if (akaScore == 2) {
+            shiroScore = shiroScore - 0.5f;
+            Toast.makeText(this, "AKA Won!", Toast.LENGTH_SHORT).show();
+        }
+        if (shiroScore >= 2) {
+            shiroScore = 2;
+            displayForShiro((int) shiroScore);
+            Toast.makeText(this, "SHIRO Won!", Toast.LENGTH_SHORT).show();
+        } else {
+            displayForShiro((int) shiroScore);
+        }
     }
 
     /**
