@@ -1,8 +1,10 @@
 package com.galacticcoders.kendoscorekeeper;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,6 +40,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void resetScore(View v) {
+
+        Button btnAkaMen = (Button) findViewById(R.id.akaMen);
+        btnAkaMen.setTextColor(Color.BLACK);
+        Button btnAkaKote = (Button) findViewById(R.id.akaKote);
+        btnAkaKote.setTextColor(Color.BLACK);
+        Button btnAkaDo = (Button) findViewById(R.id.akaDo);
+        btnAkaDo.setTextColor(Color.BLACK);
+        Button btnAkaTsuki = (Button) findViewById(R.id.akaTsuki);
+        btnAkaTsuki.setTextColor(Color.BLACK);
+        Button btnAkaHansoku = (Button) findViewById(R.id.akaHansoku);
+        btnAkaHansoku.setTextColor(Color.BLACK);
+        Button btnShiroMen = (Button) findViewById(R.id.shiroMen);
+        btnShiroMen.setTextColor(Color.BLACK);
+        Button btnShiroKote = (Button) findViewById(R.id.shiroKote);
+        btnShiroKote.setTextColor(Color.BLACK);
+        Button btnShiroDo = (Button) findViewById(R.id.shiroDo);
+        btnShiroDo.setTextColor(Color.BLACK);
+        Button btnShiroTsuki = (Button) findViewById(R.id.shiroTsuki);
+        btnShiroTsuki.setTextColor(Color.BLACK);
+        Button btnShiroHansoku = (Button) findViewById(R.id.shiroHansoku);
+        btnShiroHansoku.setTextColor(Color.BLACK);
+
         akaScore = 0;
         shiroScore = 0;
         displayForAka((int) akaScore);
@@ -49,7 +73,10 @@ public class MainActivity extends AppCompatActivity {
      */
 
     public void addOneForAka(View v) {
+        ((Button) v).setTextColor(Color.RED);
+
         akaScore = akaScore + 1;
+
         if (shiroScore == 2) {
             akaScore = akaScore - 1;
             Toast.makeText(this, "SHIRO Won!", Toast.LENGTH_SHORT).show();
@@ -64,7 +91,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void addHalfForAka(View v) {
+        ((Button) v).setTextColor(Color.RED);
+
         akaScore = akaScore + 0.5f;
+
         if (shiroScore == 2) {
             akaScore = akaScore - 0.5f;
             Toast.makeText(this, "SHIRO Won!", Toast.LENGTH_SHORT).show();
@@ -82,7 +112,10 @@ public class MainActivity extends AppCompatActivity {
      * Shiro Score.
      */
     public void addOneForShiro(View v) {
+        ((Button) v).setTextColor(Color.RED);
+
         shiroScore = shiroScore + 1;
+
         if (akaScore == 2) {
             shiroScore = shiroScore - 1;
             Toast.makeText(this, "AKA Won!", Toast.LENGTH_SHORT).show();
@@ -97,7 +130,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void addHalfForShiro(View v) {
+        ((Button) v).setTextColor(Color.RED);
+
         shiroScore = shiroScore + 0.5f;
+
         if (akaScore == 2) {
             shiroScore = shiroScore - 0.5f;
             Toast.makeText(this, "AKA Won!", Toast.LENGTH_SHORT).show();
