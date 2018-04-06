@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
     float akaScore = 0;
     float shiroScore = 0;
 
+    boolean changeColor = false;
+
     private static final String AKA_SCORE_KEY = "aka_score_key";
     private static final String SHIRO_SCORE_KEY = "shiro_score_key";
 
@@ -29,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
             shiroScore = savedInstanceState.getFloat(SHIRO_SCORE_KEY);
             displayForAka((int) akaScore);
             displayForShiro((int) shiroScore);
+
         }
     }
 
@@ -40,6 +43,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void resetScore(View v) {
+        akaScore = 0;
+        shiroScore = 0;
+        displayForAka((int) akaScore);
+        displayForShiro((int) shiroScore);
+        changeColor = true;
 
         Button btnAkaMen = (Button) findViewById(R.id.akaMen);
         btnAkaMen.setTextColor(Color.BLACK);
@@ -61,11 +69,6 @@ public class MainActivity extends AppCompatActivity {
         btnShiroTsuki.setTextColor(Color.BLACK);
         Button btnShiroHansoku = (Button) findViewById(R.id.shiroHansoku);
         btnShiroHansoku.setTextColor(Color.BLACK);
-
-        akaScore = 0;
-        shiroScore = 0;
-        displayForAka((int) akaScore);
-        displayForShiro((int) shiroScore);
     }
 
     /**
@@ -73,38 +76,40 @@ public class MainActivity extends AppCompatActivity {
      */
 
     public void addOneForAka(View v) {
-        ((Button) v).setTextColor(Color.RED);
-
-        akaScore = akaScore + 1;
 
         if (shiroScore == 2) {
-            akaScore = akaScore - 1;
             Toast.makeText(this, "SHIRO Won!", Toast.LENGTH_SHORT).show();
-        }
-        if (akaScore >= 2) {
-            akaScore = 2;
+
+        } else if (akaScore < 2) {
+            akaScore = akaScore + 1;
+            ((Button) v).setTextColor(Color.RED);
             displayForAka((int) akaScore);
-            Toast.makeText(this, "AKA Won!", Toast.LENGTH_SHORT).show();
+
+            if (akaScore == 2) {
+                Toast.makeText(this, "AKA Won!", Toast.LENGTH_SHORT).show();
+            }
+
         } else {
-            displayForAka((int) akaScore);
+            Toast.makeText(this, "AKA Won!", Toast.LENGTH_SHORT).show();
         }
     }
 
     public void addHalfForAka(View v) {
-        ((Button) v).setTextColor(Color.RED);
-
-        akaScore = akaScore + 0.5f;
 
         if (shiroScore == 2) {
-            akaScore = akaScore - 0.5f;
             Toast.makeText(this, "SHIRO Won!", Toast.LENGTH_SHORT).show();
-        }
-        if (akaScore >= 2) {
-            akaScore = 2;
+
+        } else if (akaScore < 2) {
+            akaScore = akaScore + 0.5f;
+            ((Button) v).setTextColor(Color.RED);
             displayForAka((int) akaScore);
-            Toast.makeText(this, "AKA Won!", Toast.LENGTH_SHORT).show();
+
+            if (akaScore == 2) {
+                Toast.makeText(this, "AKA Won!", Toast.LENGTH_SHORT).show();
+            }
+
         } else {
-            displayForAka((int) akaScore);
+            Toast.makeText(this, "AKA Won!", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -112,38 +117,40 @@ public class MainActivity extends AppCompatActivity {
      * Shiro Score.
      */
     public void addOneForShiro(View v) {
-        ((Button) v).setTextColor(Color.RED);
-
-        shiroScore = shiroScore + 1;
 
         if (akaScore == 2) {
-            shiroScore = shiroScore - 1;
             Toast.makeText(this, "AKA Won!", Toast.LENGTH_SHORT).show();
-        }
-        if (shiroScore >= 2) {
-            shiroScore = 2;
+
+        } else if (shiroScore < 2) {
+            shiroScore = shiroScore + 1;
+            ((Button) v).setTextColor(Color.RED);
             displayForShiro((int) shiroScore);
-            Toast.makeText(this, "SHIRO Won!", Toast.LENGTH_SHORT).show();
+
+            if (shiroScore == 2) {
+                Toast.makeText(this, "SHIRO Won!", Toast.LENGTH_SHORT).show();
+            }
+
         } else {
-            displayForShiro((int) shiroScore);
+            Toast.makeText(this, "SHIRO Won!", Toast.LENGTH_SHORT).show();
         }
     }
 
     public void addHalfForShiro(View v) {
-        ((Button) v).setTextColor(Color.RED);
-
-        shiroScore = shiroScore + 0.5f;
 
         if (akaScore == 2) {
-            shiroScore = shiroScore - 0.5f;
             Toast.makeText(this, "AKA Won!", Toast.LENGTH_SHORT).show();
-        }
-        if (shiroScore >= 2) {
-            shiroScore = 2;
+
+        } else if (shiroScore < 2) {
+            shiroScore = shiroScore + 0.5f;
+            ((Button) v).setTextColor(Color.RED);
             displayForShiro((int) shiroScore);
-            Toast.makeText(this, "SHIRO Won!", Toast.LENGTH_SHORT).show();
+
+            if (shiroScore == 2) {
+                Toast.makeText(this, "SHIRO Won!", Toast.LENGTH_SHORT).show();
+            }
+
         } else {
-            displayForShiro((int) shiroScore);
+            Toast.makeText(this, "SHIRO Won!", Toast.LENGTH_SHORT).show();
         }
     }
 
