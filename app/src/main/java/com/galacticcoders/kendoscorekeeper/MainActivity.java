@@ -17,20 +17,87 @@ public class MainActivity extends AppCompatActivity {
     float akaScore = 0;
     float shiroScore = 0;
 
-    boolean changeColor = false;
+    boolean changeColorAkaMen = false;
+    boolean changeColorAkaKote = false;
+    boolean changeColorAkaDo = false;
+    boolean changeColorAkaTsuki = false;
+    boolean changeColorAkaHansoku = false;
+    boolean changeColorShiroMen = false;
+    boolean changeColorShiroKote = false;
+    boolean changeColorShiroDo = false;
+    boolean changeColorShiroTsuki = false;
+    boolean changeColorShiroHansoku = false;
 
     private static final String AKA_SCORE_KEY = "aka_score_key";
     private static final String SHIRO_SCORE_KEY = "shiro_score_key";
+    private static final String CHANGE_COLOR_KEY_AKA_MEN = "change_color_key_aka_men";
+    private static final String CHANGE_COLOR_KEY_AKA_KOTE = "change_color_key_aka_kote";
+    private static final String CHANGE_COLOR_KEY_AKA_DO = "change_color_key_aka_do";
+    private static final String CHANGE_COLOR_KEY_AKA_TSUKI = "change_color_key_aka_tsuki";
+    private static final String CHANGE_COLOR_KEY_AKA_HANSOKU = "change_color_key_aka_hansoku";
+    private static final String CHANGE_COLOR_KEY_SHIRO_MEN = "change_color_key_shiro_men";
+    private static final String CHANGE_COLOR_KEY_SHIRO_KOTE = "change_color_key_shiro_kote";
+    private static final String CHANGE_COLOR_KEY_SHIRO_DO = "change_color_key_shiro_do";
+    private static final String CHANGE_COLOR_KEY_SHIRO_TSUKI = "change_color_key_shiro_tsuki";
+    private static final String CHANGE_COLOR_KEY_SHIRO_HANSOKU = "change_color_key_shiro_hansoku";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         if (savedInstanceState != null) {
             akaScore = savedInstanceState.getFloat(AKA_SCORE_KEY);
             shiroScore = savedInstanceState.getFloat(SHIRO_SCORE_KEY);
+            changeColorAkaMen = savedInstanceState.getBoolean(CHANGE_COLOR_KEY_AKA_MEN);
+            changeColorAkaKote = savedInstanceState.getBoolean(CHANGE_COLOR_KEY_AKA_KOTE);
+            changeColorAkaDo = savedInstanceState.getBoolean(CHANGE_COLOR_KEY_AKA_DO);
+            changeColorAkaTsuki = savedInstanceState.getBoolean(CHANGE_COLOR_KEY_AKA_TSUKI);
+            changeColorAkaHansoku = savedInstanceState.getBoolean(CHANGE_COLOR_KEY_AKA_HANSOKU);
+            changeColorShiroMen = savedInstanceState.getBoolean(CHANGE_COLOR_KEY_SHIRO_MEN);
+            changeColorShiroKote = savedInstanceState.getBoolean(CHANGE_COLOR_KEY_SHIRO_KOTE);
+            changeColorShiroDo = savedInstanceState.getBoolean(CHANGE_COLOR_KEY_SHIRO_DO);
+            changeColorShiroTsuki = savedInstanceState.getBoolean(CHANGE_COLOR_KEY_SHIRO_TSUKI);
+            changeColorShiroHansoku = savedInstanceState.getBoolean(CHANGE_COLOR_KEY_SHIRO_HANSOKU);
             displayForAka((int) akaScore);
             displayForShiro((int) shiroScore);
+
+            if (changeColorAkaMen) {
+                Button btnAkaMen = findViewById(R.id.akaMen);
+                btnAkaMen.setTextColor(Color.RED);
+            }
+            if (changeColorAkaKote) {
+                Button btnAkaMen = findViewById(R.id.akaKote);
+                btnAkaMen.setTextColor(Color.RED);
+            }
+            if (changeColorAkaDo) {
+                Button btnAkaMen = findViewById(R.id.akaDo);
+                btnAkaMen.setTextColor(Color.RED);
+            }
+            if (changeColorAkaTsuki) {
+                Button btnAkaMen = findViewById(R.id.akaTsuki);
+                btnAkaMen.setTextColor(Color.RED);
+            }
+            if (changeColorAkaHansoku) {
+                Button btnAkaMen = findViewById(R.id.akaHansoku);
+                btnAkaMen.setTextColor(Color.RED);
+            }
+            if (changeColorShiroMen) {
+                Button btnAkaMen = findViewById(R.id.shiroMen);
+                btnAkaMen.setTextColor(Color.RED);
+            }
+            if (changeColorShiroKote) {
+                Button btnAkaMen = findViewById(R.id.shiroKote);
+                btnAkaMen.setTextColor(Color.RED);
+            }
+            if (changeColorShiroDo) {
+                Button btnAkaMen = findViewById(R.id.shiroDo);
+                btnAkaMen.setTextColor(Color.RED);
+            }
+            if (changeColorShiroHansoku) {
+                Button btnAkaMen = findViewById(R.id.shiroHansoku);
+                btnAkaMen.setTextColor(Color.RED);
+            }
 
         }
     }
@@ -40,6 +107,17 @@ public class MainActivity extends AppCompatActivity {
         super.onSaveInstanceState(outState);
         outState.putFloat(AKA_SCORE_KEY, akaScore);
         outState.putFloat(SHIRO_SCORE_KEY, shiroScore);
+        outState.putBoolean(CHANGE_COLOR_KEY_AKA_MEN, changeColorAkaMen);
+        outState.putBoolean(CHANGE_COLOR_KEY_AKA_KOTE, changeColorAkaKote);
+        outState.putBoolean(CHANGE_COLOR_KEY_AKA_DO, changeColorAkaDo);
+        outState.putBoolean(CHANGE_COLOR_KEY_AKA_TSUKI, changeColorAkaTsuki);
+        outState.putBoolean(CHANGE_COLOR_KEY_AKA_HANSOKU, changeColorAkaHansoku);
+        outState.putBoolean(CHANGE_COLOR_KEY_SHIRO_MEN, changeColorShiroMen);
+        outState.putBoolean(CHANGE_COLOR_KEY_SHIRO_KOTE, changeColorShiroKote);
+        outState.putBoolean(CHANGE_COLOR_KEY_SHIRO_DO, changeColorShiroDo);
+        outState.putBoolean(CHANGE_COLOR_KEY_SHIRO_TSUKI, changeColorShiroTsuki);
+        outState.putBoolean(CHANGE_COLOR_KEY_SHIRO_HANSOKU, changeColorShiroHansoku);
+
     }
 
     public void resetScore(View v) {
@@ -47,27 +125,37 @@ public class MainActivity extends AppCompatActivity {
         shiroScore = 0;
         displayForAka((int) akaScore);
         displayForShiro((int) shiroScore);
-        changeColor = true;
 
-        Button btnAkaMen = (Button) findViewById(R.id.akaMen);
+        changeColorAkaMen = false;
+        changeColorAkaKote = false;
+        changeColorAkaDo = false;
+        changeColorAkaTsuki = false;
+        changeColorAkaHansoku = false;
+        changeColorShiroMen = false;
+        changeColorShiroKote = false;
+        changeColorShiroDo = false;
+        changeColorShiroTsuki = false;
+        changeColorShiroHansoku = false;
+
+        Button btnAkaMen = findViewById(R.id.akaMen);
         btnAkaMen.setTextColor(Color.BLACK);
-        Button btnAkaKote = (Button) findViewById(R.id.akaKote);
+        Button btnAkaKote = findViewById(R.id.akaKote);
         btnAkaKote.setTextColor(Color.BLACK);
-        Button btnAkaDo = (Button) findViewById(R.id.akaDo);
+        Button btnAkaDo = findViewById(R.id.akaDo);
         btnAkaDo.setTextColor(Color.BLACK);
-        Button btnAkaTsuki = (Button) findViewById(R.id.akaTsuki);
+        Button btnAkaTsuki = findViewById(R.id.akaTsuki);
         btnAkaTsuki.setTextColor(Color.BLACK);
-        Button btnAkaHansoku = (Button) findViewById(R.id.akaHansoku);
+        Button btnAkaHansoku = findViewById(R.id.akaHansoku);
         btnAkaHansoku.setTextColor(Color.BLACK);
-        Button btnShiroMen = (Button) findViewById(R.id.shiroMen);
+        Button btnShiroMen = findViewById(R.id.shiroMen);
         btnShiroMen.setTextColor(Color.BLACK);
-        Button btnShiroKote = (Button) findViewById(R.id.shiroKote);
+        Button btnShiroKote = findViewById(R.id.shiroKote);
         btnShiroKote.setTextColor(Color.BLACK);
-        Button btnShiroDo = (Button) findViewById(R.id.shiroDo);
+        Button btnShiroDo = findViewById(R.id.shiroDo);
         btnShiroDo.setTextColor(Color.BLACK);
-        Button btnShiroTsuki = (Button) findViewById(R.id.shiroTsuki);
+        Button btnShiroTsuki = findViewById(R.id.shiroTsuki);
         btnShiroTsuki.setTextColor(Color.BLACK);
-        Button btnShiroHansoku = (Button) findViewById(R.id.shiroHansoku);
+        Button btnShiroHansoku = findViewById(R.id.shiroHansoku);
         btnShiroHansoku.setTextColor(Color.BLACK);
     }
 
@@ -75,13 +163,74 @@ public class MainActivity extends AppCompatActivity {
      * Aka Score.
      */
 
-    public void addOneForAka(View v) {
+    public void addOneForAkaMen(View v) {
 
         if (shiroScore == 2) {
             Toast.makeText(this, "SHIRO Won!", Toast.LENGTH_SHORT).show();
 
         } else if (akaScore < 2) {
             akaScore = akaScore + 1;
+            changeColorAkaMen = true;
+            ((Button) v).setTextColor(Color.RED);
+            displayForAka((int) akaScore);
+
+            if (akaScore == 2) {
+                Toast.makeText(this, "AKA Won!", Toast.LENGTH_SHORT).show();
+            }
+
+        } else {
+            Toast.makeText(this, "AKA Won!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void addOneForAkaKote(View v) {
+
+        if (shiroScore == 2) {
+            Toast.makeText(this, "SHIRO Won!", Toast.LENGTH_SHORT).show();
+
+        } else if (akaScore < 2) {
+            akaScore = akaScore + 1;
+            changeColorAkaKote = true;
+            ((Button) v).setTextColor(Color.RED);
+            displayForAka((int) akaScore);
+
+            if (akaScore == 2) {
+                Toast.makeText(this, "AKA Won!", Toast.LENGTH_SHORT).show();
+            }
+
+        } else {
+            Toast.makeText(this, "AKA Won!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void addOneForAkaDo(View v) {
+
+        if (shiroScore == 2) {
+            Toast.makeText(this, "SHIRO Won!", Toast.LENGTH_SHORT).show();
+
+        } else if (akaScore < 2) {
+            akaScore = akaScore + 1;
+            changeColorAkaDo = true;
+            ((Button) v).setTextColor(Color.RED);
+            displayForAka((int) akaScore);
+
+            if (akaScore == 2) {
+                Toast.makeText(this, "AKA Won!", Toast.LENGTH_SHORT).show();
+            }
+
+        } else {
+            Toast.makeText(this, "AKA Won!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void addOneForAkaTsuki(View v) {
+
+        if (shiroScore == 2) {
+            Toast.makeText(this, "SHIRO Won!", Toast.LENGTH_SHORT).show();
+
+        } else if (akaScore < 2) {
+            akaScore = akaScore + 1;
+            changeColorAkaTsuki = true;
             ((Button) v).setTextColor(Color.RED);
             displayForAka((int) akaScore);
 
@@ -101,6 +250,7 @@ public class MainActivity extends AppCompatActivity {
 
         } else if (akaScore < 2) {
             akaScore = akaScore + 0.5f;
+            changeColorAkaHansoku = true;
             ((Button) v).setTextColor(Color.RED);
             displayForAka((int) akaScore);
 
@@ -116,13 +266,74 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Shiro Score.
      */
-    public void addOneForShiro(View v) {
+    public void addOneForShiroMen(View v) {
 
         if (akaScore == 2) {
             Toast.makeText(this, "AKA Won!", Toast.LENGTH_SHORT).show();
 
         } else if (shiroScore < 2) {
             shiroScore = shiroScore + 1;
+            changeColorShiroMen = true;
+            ((Button) v).setTextColor(Color.RED);
+            displayForShiro((int) shiroScore);
+
+            if (shiroScore == 2) {
+                Toast.makeText(this, "SHIRO Won!", Toast.LENGTH_SHORT).show();
+            }
+
+        } else {
+            Toast.makeText(this, "SHIRO Won!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void addOneForShiroKote(View v) {
+
+        if (akaScore == 2) {
+            Toast.makeText(this, "AKA Won!", Toast.LENGTH_SHORT).show();
+
+        } else if (shiroScore < 2) {
+            shiroScore = shiroScore + 1;
+            changeColorShiroKote = true;
+            ((Button) v).setTextColor(Color.RED);
+            displayForShiro((int) shiroScore);
+
+            if (shiroScore == 2) {
+                Toast.makeText(this, "SHIRO Won!", Toast.LENGTH_SHORT).show();
+            }
+
+        } else {
+            Toast.makeText(this, "SHIRO Won!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void addOneForShiroDo(View v) {
+
+        if (akaScore == 2) {
+            Toast.makeText(this, "AKA Won!", Toast.LENGTH_SHORT).show();
+
+        } else if (shiroScore < 2) {
+            shiroScore = shiroScore + 1;
+            changeColorShiroDo = true;
+            ((Button) v).setTextColor(Color.RED);
+            displayForShiro((int) shiroScore);
+
+            if (shiroScore == 2) {
+                Toast.makeText(this, "SHIRO Won!", Toast.LENGTH_SHORT).show();
+            }
+
+        } else {
+            Toast.makeText(this, "SHIRO Won!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void addOneForShiroTsuki(View v) {
+
+        if (akaScore == 2) {
+            Toast.makeText(this, "AKA Won!", Toast.LENGTH_SHORT).show();
+
+        } else if (shiroScore < 2) {
+            shiroScore = shiroScore + 1;
+            changeColorShiroTsuki = true;
             ((Button) v).setTextColor(Color.RED);
             displayForShiro((int) shiroScore);
 
@@ -142,6 +353,7 @@ public class MainActivity extends AppCompatActivity {
 
         } else if (shiroScore < 2) {
             shiroScore = shiroScore + 0.5f;
+            changeColorShiroHansoku = true;
             ((Button) v).setTextColor(Color.RED);
             displayForShiro((int) shiroScore);
 

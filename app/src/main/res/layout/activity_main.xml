@@ -65,7 +65,7 @@
                 android:layout_gravity="right"
                 android:layout_marginBottom="@dimen/button_margin_bottom"
                 android:layout_marginRight="@dimen/button_margin_right"
-                android:onClick="addOneForAka"
+                android:onClick="addOneForAkaMen"
                 android:text="@string/menAri"/>
 
             <Button
@@ -75,7 +75,7 @@
                 android:layout_gravity="right"
                 android:layout_marginBottom="@dimen/button_margin_bottom"
                 android:layout_marginRight="@dimen/button_margin_right"
-                android:onClick="addOneForAka"
+                android:onClick="addOneForAkaKote"
                 android:text="@string/koteAri" />
 
             <Button
@@ -85,7 +85,7 @@
                 android:layout_gravity="right"
                 android:layout_marginBottom="@dimen/button_margin_bottom"
                 android:layout_marginRight="@dimen/button_margin_right"
-                android:onClick="addOneForAka"
+                android:onClick="addOneForAkaDo"
                 android:text="@string/doAri" />
 
             <Button
@@ -95,7 +95,7 @@
                 android:layout_gravity="right"
                 android:layout_marginBottom="@dimen/button_margin_bottom"
                 android:layout_marginRight="@dimen/button_margin_right"
-                android:onClick="addOneForAka"
+                android:onClick="addOneForAkaTsuki"
                 android:text="@string/tsukiAri" />
 
             <Button
@@ -152,7 +152,7 @@
                 android:layout_gravity="left"
                 android:layout_marginBottom="@dimen/button_margin_bottom"
                 android:layout_marginLeft="@dimen/button_margin_left"
-                android:onClick="addOneForShiro"
+                android:onClick="addOneForShiroMen"
                 android:text="@string/menAri" />
 
             <Button
@@ -162,7 +162,7 @@
                 android:layout_gravity="left"
                 android:layout_marginBottom="@dimen/button_margin_bottom"
                 android:layout_marginLeft="@dimen/button_margin_left"
-                android:onClick="addOneForShiro"
+                android:onClick="addOneForShiroKote"
                 android:text="@string/koteAri" />
 
             <Button
@@ -172,7 +172,7 @@
                 android:layout_gravity="left"
                 android:layout_marginBottom="@dimen/button_margin_bottom"
                 android:layout_marginLeft="@dimen/button_margin_left"
-                android:onClick="addOneForShiro"
+                android:onClick="addOneForShiroDo"
                 android:text="@string/doAri" />
 
             <Button
@@ -182,7 +182,7 @@
                 android:layout_gravity="left"
                 android:layout_marginBottom="@dimen/button_margin_bottom"
                 android:layout_marginLeft="@dimen/button_margin_left"
-                android:onClick="addOneForShiro"
+                android:onClick="addOneForShiroTsuki"
                 android:text="@string/tsukiAri" />
 
             <Button
