@@ -1,4 +1,5 @@
 <resources>
+
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Primary theme color of the app (sets background color of app bar) -->
@@ -6,4 +7,263 @@
         <!-- Background color of buttons in the app -->
         <item name="colorButtonNormal">#00ff9800</item>
     </style>
+
+    <!-- Root layout theme. -->
+    <style name="RootLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/colorPrimaryLight</item>
+    </style>
+
+    <!-- Background theme. -->
+    <style name="Background">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:scaleType">fitXY</item>
+    </style>
+
+    <style name="BackgroundLeft" parent="Background">
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:src">@drawable/kendoka_left</item>
+    </style>
+
+    <style name="BackgroundRight" parent="Background">
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:src">@drawable/kendoka_right</item>
+    </style>
+
+    <!-- Score Panel theme. -->
+    <style name="ScoreBoard">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/sp_margin_top</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="ScorePanel">
+        <item name="android:layout_width">@dimen/sp_layout_width</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="ScorePanelVertical" parent="ScorePanel">
+        <item name="android:layout_weight">@dimen/sp_layout_weight</item>
+    </style>
+
+    <style name="ScorePanelLandOuter" parent="ScorePanel">
+        <item name="android:layout_gravity">bottom</item>
+        <item name="android:layout_weight">@dimen/sp_land_outer_layout_weight</item>
+    </style>
+
+    <style name="ScorePanelLandInner" parent="ScorePanel">
+        <item name="android:layout_weight">@dimen/sp_land_inner_layout_weight</item>
+    </style>
+
+    <!-- Score Text theme. -->
+    <style name="ScoreText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/text_margin_bottom</item>
+        <item name="android:textColor">@color/primaryText</item>
+    </style>
+
+    <style name="ScoreTitle" parent="ScoreText">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">@dimen/text_size_title</item>
+    </style>
+
+    <style name="ScoreTitleAka" parent="ScoreTitle">
+        <item name="android:text">@string/aka</item>
+        <item name="android:layout_marginRight">@dimen/text_margin_right</item>
+        <item name="android:layout_gravity">right</item>
+    </style>
+
+    <style name="ScoreTitleShiro" parent="ScoreTitle">
+        <item name="android:text">@string/shiro</item>
+        <item name="android:layout_marginLeft">@dimen/text_margin_left</item>
+        <item name="android:layout_gravity">left</item>
+    </style>
+
+    <style name="ScoreCount" parent="ScoreText">
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:text">@string/textScore</item>
+        <item name="android:textSize">@dimen/text_size_score</item>
+    </style>
+
+    <style name="ScoreCountAka" parent="ScoreCount">
+        <item name="android:layout_marginRight">@dimen/text_margin_right</item>
+        <item name="android:layout_gravity">right</item>
+    </style>
+
+    <style name="ScoreCountShiro" parent="ScoreCount">
+        <item name="android:layout_marginLeft">@dimen/text_margin_left</item>
+        <item name="android:layout_gravity">left</item>
+    </style>
+
+    <!-- Score Text land theme. -->
+    <style name="ScoreTitleAkaLand" parent="ScoreTitleAka">
+        <item name="android:layout_marginBottom">@dimen/land_text_margin_bottom</item>
+    </style>
+
+    <style name="ScoreTitleShiroLand" parent="ScoreTitleShiro">
+        <item name="android:layout_marginBottom">@dimen/land_text_margin_bottom</item>
+    </style>
+
+    <style name="ScoreCountAkaLand" parent="ScoreCountAka">
+        <item name="android:layout_marginBottom">@dimen/land_text_margin_bottom</item>
+    </style>
+
+    <style name="ScoreCountShiroLand" parent="ScoreCountShiro">
+        <item name="android:layout_marginBottom">@dimen/land_text_margin_bottom</item>
+    </style>
+
+    <!-- Button theme. -->
+    <style name="Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/button_margin_bottom</item>
+    </style>
+
+    <style name="ButtonAka" parent="Button">
+        <item name="android:layout_gravity">right</item>
+    </style>
+
+    <style name="ButtonAkaVertical" parent="ButtonAka">
+        <item name="android:layout_marginRight">@dimen/button_margin_right</item>
+    </style>
+
+    <style name="ButtonAkaMen" parent="ButtonAkaVertical">
+        <item name="android:onClick">addOneForAkaMen</item>
+        <item name="android:text">@string/menAri</item>
+    </style>
+
+    <style name="ButtonAkaKote" parent="ButtonAkaVertical">
+        <item name="android:onClick">addOneForAkaKote</item>
+        <item name="android:text">@string/koteAri</item>
+    </style>
+
+    <style name="ButtonAkaDo" parent="ButtonAkaVertical">
+        <item name="android:onClick">addOneForAkaDo</item>
+        <item name="android:text">@string/doAri</item>
+    </style>
+
+    <style name="ButtonAkaTsuki" parent="ButtonAkaVertical">
+        <item name="android:onClick">addOneForAkaTsuki</item>
+        <item name="android:text">@string/tsukiAri</item>
+    </style>
+
+    <style name="ButtonAkaHansoku" parent="ButtonAkaVertical">
+        <item name="android:onClick">addHalfForShiro</item>
+        <item name="android:text">@string/hansoku</item>
+    </style>
+
+    <style name="ButtonShiro" parent="Button">
+        <item name="android:layout_gravity">left</item>
+    </style>
+
+    <style name="ButtonShiroVertical" parent="ButtonShiro">
+        <item name="android:layout_marginLeft">@dimen/button_margin_left</item>
+    </style>
+
+    <style name="ButtonShiroMen" parent="ButtonShiroVertical">
+        <item name="android:onClick">addOneForShiroMen</item>
+        <item name="android:text">@string/menAri</item>
+    </style>
+
+    <style name="ButtonShiroKote" parent="ButtonShiroVertical">
+        <item name="android:onClick">addOneForShiroKote</item>
+        <item name="android:text">@string/koteAri</item>
+    </style>
+
+    <style name="ButtonShiroDo" parent="ButtonShiroVertical">
+        <item name="android:onClick">addOneForShiroDo</item>
+        <item name="android:text">@string/doAri</item>
+    </style>
+
+    <style name="ButtonShiroTsuki" parent="ButtonShiroVertical">
+        <item name="android:onClick">addOneForShiroTsuki</item>
+        <item name="android:text">@string/tsukiAri</item>
+    </style>
+
+    <style name="ButtonShiroHansoku" parent="ButtonShiroVertical">
+        <item name="android:onClick">addHalfForAka</item>
+        <item name="android:text">@string/hansoku</item>
+    </style>
+
+    <!-- Button Land theme. -->
+    <style name="ButtonAkaMenLand" parent="ButtonAka">
+        <item name="android:onClick">addOneForAkaMen</item>
+        <item name="android:text">@string/menAri</item>
+    </style>
+
+    <style name="ButtonAkaKoteLand" parent="ButtonAka">
+        <item name="android:onClick">addOneForAkaKote</item>
+        <item name="android:text">@string/koteAri</item>
+    </style>
+
+    <style name="ButtonAkaDoLand" parent="ButtonAka">
+        <item name="android:onClick">addOneForAkaDo</item>
+        <item name="android:text">@string/doAri</item>
+    </style>
+
+    <style name="ButtonAkaTsukiLand" parent="ButtonAka">
+        <item name="android:onClick">addOneForAkaTsuki</item>
+        <item name="android:text">@string/tsukiAri</item>
+        <item name="android:layout_marginRight">@dimen/button_margin_right</item>
+    </style>
+
+    <style name="ButtonAkaHansokuLand" parent="ButtonAka">
+        <item name="android:onClick">addHalfForShiro</item>
+        <item name="android:text">@string/hansoku</item>
+        <item name="android:layout_marginRight">@dimen/button_margin_right</item>
+    </style>
+
+    <style name="ButtonShiroMenLand" parent="ButtonShiro">
+        <item name="android:onClick">addOneForShiroMen</item>
+        <item name="android:text">@string/menAri</item>
+    </style>
+
+    <style name="ButtonShiroKoteLand" parent="ButtonShiro">
+        <item name="android:onClick">addOneForShiroKote</item>
+        <item name="android:text">@string/koteAri</item>
+    </style>
+
+    <style name="ButtonShiroDoLand" parent="ButtonShiro">
+        <item name="android:onClick">addOneForShiroDo</item>
+        <item name="android:text">@string/doAri</item>
+    </style>
+
+    <style name="ButtonShiroTsukiLand" parent="ButtonShiro">
+        <item name="android:onClick">addOneForShiroTsuki</item>
+        <item name="android:text">@string/tsukiAri</item>
+        <item name="android:layout_marginLeft">@dimen/button_margin_left</item>
+    </style>
+
+    <style name="ButtonShiroHansokuLand" parent="ButtonShiro">
+        <item name="android:onClick">addHalfForAka</item>
+        <item name="android:text">@string/hansoku</item>
+        <item name="android:layout_marginLeft">@dimen/button_margin_left</item>
+    </style>
+
+    <!-- Divider theme. -->
+    <style name="Divider">
+        <item name="android:layout_width">@dimen/divider_layout_width</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+    <!-- Reset Button theme. -->
+    <style name="ResetButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginBottom">@dimen/reset_bottom</item>
+        <item name="android:onClick">resetScore</item>
+        <item name="android:text">@string/reset</item>
+    </style>
+
+
 </resources>

@@ -12,11 +12,17 @@ import com.galacticcoders.kendoscorekeeper.R;
 
 import org.w3c.dom.Text;
 
+/**
+ * This app is a score keeper counter.
+ */
+
 public class MainActivity extends AppCompatActivity {
 
+    //float variable for score keeping.
     float akaScore = 0;
     float shiroScore = 0;
 
+    //boolean variables for changing text color.
     boolean changeColorAkaMen = false;
     boolean changeColorAkaKote = false;
     boolean changeColorAkaDo = false;
@@ -28,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     boolean changeColorShiroTsuki = false;
     boolean changeColorShiroHansoku = false;
 
+    //strings for storing variables.
     private static final String AKA_SCORE_KEY = "aka_score_key";
     private static final String SHIRO_SCORE_KEY = "shiro_score_key";
     private static final String CHANGE_COLOR_KEY_AKA_MEN = "change_color_key_aka_men";
@@ -47,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         if (savedInstanceState != null) {
+
+            //define the variables from the strings.
             akaScore = savedInstanceState.getFloat(AKA_SCORE_KEY);
             shiroScore = savedInstanceState.getFloat(SHIRO_SCORE_KEY);
             changeColorAkaMen = savedInstanceState.getBoolean(CHANGE_COLOR_KEY_AKA_MEN);
@@ -59,8 +68,14 @@ public class MainActivity extends AppCompatActivity {
             changeColorShiroDo = savedInstanceState.getBoolean(CHANGE_COLOR_KEY_SHIRO_DO);
             changeColorShiroTsuki = savedInstanceState.getBoolean(CHANGE_COLOR_KEY_SHIRO_TSUKI);
             changeColorShiroHansoku = savedInstanceState.getBoolean(CHANGE_COLOR_KEY_SHIRO_HANSOKU);
+
+            //display score onCreate.
             displayForAka((int) akaScore);
             displayForShiro((int) shiroScore);
+
+            /**
+             * Check which boolean is true and set the text color accordingly.
+             */
 
             if (changeColorAkaMen) {
                 Button btnAkaMen = findViewById(R.id.akaMen);
@@ -102,9 +117,17 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This method is called before the app is destroyed in order to save the
+     * variable into strings.
+     *
+     * @param outState saves the variable into string
+     */
+
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
+
         outState.putFloat(AKA_SCORE_KEY, akaScore);
         outState.putFloat(SHIRO_SCORE_KEY, shiroScore);
         outState.putBoolean(CHANGE_COLOR_KEY_AKA_MEN, changeColorAkaMen);
@@ -120,12 +143,21 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * This method is called when the reset button is pressed.
+     *
+     * @param v
+     */
+
     public void resetScore(View v) {
+
+        //set score to 0 and then display it.
         akaScore = 0;
         shiroScore = 0;
         displayForAka((int) akaScore);
         displayForShiro((int) shiroScore);
 
+        //set all booleans to false.
         changeColorAkaMen = false;
         changeColorAkaKote = false;
         changeColorAkaDo = false;
@@ -137,6 +169,7 @@ public class MainActivity extends AppCompatActivity {
         changeColorShiroTsuki = false;
         changeColorShiroHansoku = false;
 
+        //change all text color to black
         Button btnAkaMen = findViewById(R.id.akaMen);
         btnAkaMen.setTextColor(Color.BLACK);
         Button btnAkaKote = findViewById(R.id.akaKote);
@@ -163,6 +196,10 @@ public class MainActivity extends AppCompatActivity {
      * Aka Score.
      */
 
+    /**
+     * This method is called when the Men button for Aka is pressed
+     */
+
     public void addOneForAkaMen(View v) {
 
         if (shiroScore == 2) {
@@ -174,7 +211,7 @@ public class MainActivity extends AppCompatActivity {
             ((Button) v).setTextColor(Color.RED);
             displayForAka((int) akaScore);
 
-            if (akaScore == 2) {
+            if (akaScore >= 2) {
                 Toast.makeText(this, "AKA Won!", Toast.LENGTH_SHORT).show();
             }
 
@@ -182,6 +219,10 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "AKA Won!", Toast.LENGTH_SHORT).show();
         }
     }
+
+    /**
+     * This method is called when the Kote button for Aka is pressed
+     */
 
     public void addOneForAkaKote(View v) {
 
@@ -194,7 +235,7 @@ public class MainActivity extends AppCompatActivity {
             ((Button) v).setTextColor(Color.RED);
             displayForAka((int) akaScore);
 
-            if (akaScore == 2) {
+            if (akaScore >= 2) {
                 Toast.makeText(this, "AKA Won!", Toast.LENGTH_SHORT).show();
             }
 
@@ -202,6 +243,10 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "AKA Won!", Toast.LENGTH_SHORT).show();
         }
     }
+
+    /**
+     * This method is called when the Do button for Aka is pressed
+     */
 
     public void addOneForAkaDo(View v) {
 
@@ -214,7 +259,7 @@ public class MainActivity extends AppCompatActivity {
             ((Button) v).setTextColor(Color.RED);
             displayForAka((int) akaScore);
 
-            if (akaScore == 2) {
+            if (akaScore >= 2) {
                 Toast.makeText(this, "AKA Won!", Toast.LENGTH_SHORT).show();
             }
 
@@ -222,6 +267,10 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "AKA Won!", Toast.LENGTH_SHORT).show();
         }
     }
+
+    /**
+     * This method is called when the Tsuki button for Aka is pressed
+     */
 
     public void addOneForAkaTsuki(View v) {
 
@@ -234,7 +283,7 @@ public class MainActivity extends AppCompatActivity {
             ((Button) v).setTextColor(Color.RED);
             displayForAka((int) akaScore);
 
-            if (akaScore == 2) {
+            if (akaScore >= 2) {
                 Toast.makeText(this, "AKA Won!", Toast.LENGTH_SHORT).show();
             }
 
@@ -242,6 +291,10 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "AKA Won!", Toast.LENGTH_SHORT).show();
         }
     }
+
+    /**
+     * This method is called when the Hansoku button of Aka is pressed
+     */
 
     public void addHalfForAka(View v) {
 
@@ -254,7 +307,7 @@ public class MainActivity extends AppCompatActivity {
             ((Button) v).setTextColor(Color.RED);
             displayForAka((int) akaScore);
 
-            if (akaScore == 2) {
+            if (akaScore >= 2) {
                 Toast.makeText(this, "AKA Won!", Toast.LENGTH_SHORT).show();
             }
 
@@ -266,6 +319,11 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Shiro Score.
      */
+
+    /**
+     * This method is called when the Men button for Shiro is pressed
+     */
+
     public void addOneForShiroMen(View v) {
 
         if (akaScore == 2) {
@@ -277,7 +335,7 @@ public class MainActivity extends AppCompatActivity {
             ((Button) v).setTextColor(Color.RED);
             displayForShiro((int) shiroScore);
 
-            if (shiroScore == 2) {
+            if (shiroScore >= 2) {
                 Toast.makeText(this, "SHIRO Won!", Toast.LENGTH_SHORT).show();
             }
 
@@ -285,6 +343,10 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "SHIRO Won!", Toast.LENGTH_SHORT).show();
         }
     }
+
+    /**
+     * This method is called when the Kote button for Shiro is pressed
+     */
 
     public void addOneForShiroKote(View v) {
 
@@ -297,7 +359,7 @@ public class MainActivity extends AppCompatActivity {
             ((Button) v).setTextColor(Color.RED);
             displayForShiro((int) shiroScore);
 
-            if (shiroScore == 2) {
+            if (shiroScore >= 2) {
                 Toast.makeText(this, "SHIRO Won!", Toast.LENGTH_SHORT).show();
             }
 
@@ -305,6 +367,10 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "SHIRO Won!", Toast.LENGTH_SHORT).show();
         }
     }
+
+    /**
+     * This method is called when the Do button for Shiro is pressed
+     */
 
     public void addOneForShiroDo(View v) {
 
@@ -317,7 +383,7 @@ public class MainActivity extends AppCompatActivity {
             ((Button) v).setTextColor(Color.RED);
             displayForShiro((int) shiroScore);
 
-            if (shiroScore == 2) {
+            if (shiroScore >= 2) {
                 Toast.makeText(this, "SHIRO Won!", Toast.LENGTH_SHORT).show();
             }
 
@@ -325,6 +391,10 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "SHIRO Won!", Toast.LENGTH_SHORT).show();
         }
     }
+
+    /**
+     * This method is called when the Tsuki button for Shiro is pressed
+     */
 
     public void addOneForShiroTsuki(View v) {
 
@@ -337,7 +407,7 @@ public class MainActivity extends AppCompatActivity {
             ((Button) v).setTextColor(Color.RED);
             displayForShiro((int) shiroScore);
 
-            if (shiroScore == 2) {
+            if (shiroScore >= 2) {
                 Toast.makeText(this, "SHIRO Won!", Toast.LENGTH_SHORT).show();
             }
 
@@ -345,6 +415,10 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "SHIRO Won!", Toast.LENGTH_SHORT).show();
         }
     }
+
+    /**
+     * This method is called when the Hansoku button of Shiro is pressed
+     */
 
     public void addHalfForShiro(View v) {
 
@@ -357,7 +431,7 @@ public class MainActivity extends AppCompatActivity {
             ((Button) v).setTextColor(Color.RED);
             displayForShiro((int) shiroScore);
 
-            if (shiroScore == 2) {
+            if (shiroScore >= 2) {
                 Toast.makeText(this, "SHIRO Won!", Toast.LENGTH_SHORT).show();
             }
 

@@ -1,32 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?><!--
-Copyright 2013 The Android Open Source Project
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-     http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
--->
+<?xml version="1.0" encoding="utf-8"?>
 
 <resources>
-    <dimen name="action_button_min_width">56dp</dimen>
-    <dimen name="indeterminate_progress_size">32dp</dimen>
-    <dimen name="margin_top">24dp</dimen>
+
+    <!-- Score Panel dimen. -->
+    <dimen name="sp_margin_top">24dp</dimen>
+
+    <!-- Score Panel dimen. -->
+    <dimen name="sp_layout_width">0dp</dimen>
+    <dimen name="sp_layout_weight">1</dimen>
+    <dimen name="sp_land_outer_layout_weight">3</dimen>
+    <dimen name="sp_land_inner_layout_weight">2</dimen>
+
+    <!-- Score Text dimen. -->
     <dimen name="text_margin_bottom">16dp</dimen>
-    <dimen name="text_margin_left">24dp</dimen>
     <dimen name="text_margin_right">24dp</dimen>
+    <dimen name="text_margin_left">24dp</dimen>
     <dimen name="text_size_title">14sp</dimen>
     <dimen name="text_size_score">56sp</dimen>
+    <dimen name="land_text_margin_bottom">8sp</dimen>
+
+    <!-- Button dimen. -->
     <dimen name="button_margin_bottom">8dp</dimen>
     <dimen name="button_margin_left">8dp</dimen>
     <dimen name="button_margin_right">8dp</dimen>
-    <dimen name="land_margin_top">16sp</dimen>
-    <dimen name="land_text_margin_bottom">8sp</dimen>
-    <dimen name="land_margin_bottom">4sp</dimen>
+
+    <!-- Divider dimen. -->
+    <dimen name="divider_layout_width">1dp</dimen>
+
+    <!-- Reset dimen. -->
+    <dimen name="reset_bottom">24sp</dimen>
+
 </resources>
