@@ -22,17 +22,17 @@ public class MainActivity extends AppCompatActivity {
     float akaScore = 0;
     float shiroScore = 0;
 
-    //boolean variables for changing text color.
-    boolean changeColorAkaMen = false;
-    boolean changeColorAkaKote = false;
-    boolean changeColorAkaDo = false;
-    boolean changeColorAkaTsuki = false;
-    boolean changeColorAkaHansoku = false;
-    boolean changeColorShiroMen = false;
-    boolean changeColorShiroKote = false;
-    boolean changeColorShiroDo = false;
-    boolean changeColorShiroTsuki = false;
-    boolean changeColorShiroHansoku = false;
+    //integer variables for changing text color.
+    int changeColorAkaMen = 0;
+    int changeColorAkaKote = 0;
+    int changeColorAkaDo = 0;
+    int changeColorAkaTsuki = 0;
+    int changeColorAkaHansoku = 0;
+    int changeColorShiroMen = 0;
+    int changeColorShiroKote = 0;
+    int changeColorShiroDo = 0;
+    int changeColorShiroTsuki = 0;
+    int changeColorShiroHansoku = 0;
 
     //strings for storing variables.
     private static final String AKA_SCORE_KEY = "aka_score_key";
@@ -58,60 +58,83 @@ public class MainActivity extends AppCompatActivity {
             //define the variables from the strings.
             akaScore = savedInstanceState.getFloat(AKA_SCORE_KEY);
             shiroScore = savedInstanceState.getFloat(SHIRO_SCORE_KEY);
-            changeColorAkaMen = savedInstanceState.getBoolean(CHANGE_COLOR_KEY_AKA_MEN);
-            changeColorAkaKote = savedInstanceState.getBoolean(CHANGE_COLOR_KEY_AKA_KOTE);
-            changeColorAkaDo = savedInstanceState.getBoolean(CHANGE_COLOR_KEY_AKA_DO);
-            changeColorAkaTsuki = savedInstanceState.getBoolean(CHANGE_COLOR_KEY_AKA_TSUKI);
-            changeColorAkaHansoku = savedInstanceState.getBoolean(CHANGE_COLOR_KEY_AKA_HANSOKU);
-            changeColorShiroMen = savedInstanceState.getBoolean(CHANGE_COLOR_KEY_SHIRO_MEN);
-            changeColorShiroKote = savedInstanceState.getBoolean(CHANGE_COLOR_KEY_SHIRO_KOTE);
-            changeColorShiroDo = savedInstanceState.getBoolean(CHANGE_COLOR_KEY_SHIRO_DO);
-            changeColorShiroTsuki = savedInstanceState.getBoolean(CHANGE_COLOR_KEY_SHIRO_TSUKI);
-            changeColorShiroHansoku = savedInstanceState.getBoolean(CHANGE_COLOR_KEY_SHIRO_HANSOKU);
+            changeColorAkaMen = savedInstanceState.getInt(CHANGE_COLOR_KEY_AKA_MEN);
+            changeColorAkaKote = savedInstanceState.getInt(CHANGE_COLOR_KEY_AKA_KOTE);
+            changeColorAkaDo = savedInstanceState.getInt(CHANGE_COLOR_KEY_AKA_DO);
+            changeColorAkaTsuki = savedInstanceState.getInt(CHANGE_COLOR_KEY_AKA_TSUKI);
+            changeColorAkaHansoku = savedInstanceState.getInt(CHANGE_COLOR_KEY_AKA_HANSOKU);
+            changeColorShiroMen = savedInstanceState.getInt(CHANGE_COLOR_KEY_SHIRO_MEN);
+            changeColorShiroKote = savedInstanceState.getInt(CHANGE_COLOR_KEY_SHIRO_KOTE);
+            changeColorShiroDo = savedInstanceState.getInt(CHANGE_COLOR_KEY_SHIRO_DO);
+            changeColorShiroTsuki = savedInstanceState.getInt(CHANGE_COLOR_KEY_SHIRO_TSUKI);
+            changeColorShiroHansoku = savedInstanceState.getInt(CHANGE_COLOR_KEY_SHIRO_HANSOKU);
 
             //display score onCreate.
             displayForAka((int) akaScore);
             displayForShiro((int) shiroScore);
 
             /**
-             * Check which boolean is true and set the text color accordingly.
+             * Check which integer is 1 and set the text color to red.
              */
 
-            if (changeColorAkaMen) {
-                Button btnAkaMen = findViewById(R.id.akaMen);
-                btnAkaMen.setTextColor(Color.RED);
+            switch (changeColorAkaMen) {
+                case 1:
+                    Button ippon = findViewById(R.id.akaMen);
+                    ippon.setTextColor(Color.RED);
             }
-            if (changeColorAkaKote) {
-                Button btnAkaMen = findViewById(R.id.akaKote);
-                btnAkaMen.setTextColor(Color.RED);
+
+            switch (changeColorAkaKote) {
+                case 1:
+                    Button ippon = findViewById(R.id.akaKote);
+                    ippon.setTextColor(Color.RED);
             }
-            if (changeColorAkaDo) {
-                Button btnAkaMen = findViewById(R.id.akaDo);
-                btnAkaMen.setTextColor(Color.RED);
+
+            switch (changeColorAkaDo) {
+                case 1:
+                    Button ippon = findViewById(R.id.akaDo);
+                    ippon.setTextColor(Color.RED);
             }
-            if (changeColorAkaTsuki) {
-                Button btnAkaMen = findViewById(R.id.akaTsuki);
-                btnAkaMen.setTextColor(Color.RED);
+
+            switch (changeColorAkaTsuki) {
+                case 1:
+                    Button ippon = findViewById(R.id.akaTsuki);
+                    ippon.setTextColor(Color.RED);
             }
-            if (changeColorAkaHansoku) {
-                Button btnAkaMen = findViewById(R.id.akaHansoku);
-                btnAkaMen.setTextColor(Color.RED);
+
+            switch (changeColorAkaHansoku) {
+                case 1:
+                    Button ippon = findViewById(R.id.akaHansoku);
+                    ippon.setTextColor(Color.RED);
             }
-            if (changeColorShiroMen) {
-                Button btnAkaMen = findViewById(R.id.shiroMen);
-                btnAkaMen.setTextColor(Color.RED);
+
+            switch (changeColorShiroMen) {
+                case 1:
+                    Button ippon = findViewById(R.id.shiroMen);
+                    ippon.setTextColor(Color.RED);
             }
-            if (changeColorShiroKote) {
-                Button btnAkaMen = findViewById(R.id.shiroKote);
-                btnAkaMen.setTextColor(Color.RED);
+
+            switch (changeColorShiroKote) {
+                case 1:
+                    Button ippon = findViewById(R.id.shiroKote);
+                    ippon.setTextColor(Color.RED);
             }
-            if (changeColorShiroDo) {
-                Button btnAkaMen = findViewById(R.id.shiroDo);
-                btnAkaMen.setTextColor(Color.RED);
+
+            switch (changeColorShiroDo) {
+                case 1:
+                    Button ippon = findViewById(R.id.shiroDo);
+                    ippon.setTextColor(Color.RED);
             }
-            if (changeColorShiroHansoku) {
-                Button btnAkaMen = findViewById(R.id.shiroHansoku);
-                btnAkaMen.setTextColor(Color.RED);
+
+            switch (changeColorShiroTsuki) {
+                case 1:
+                    Button ippon = findViewById(R.id.shiroDo);
+                    ippon.setTextColor(Color.RED);
+            }
+
+            switch (changeColorShiroHansoku) {
+                case 1:
+                    Button ippon = findViewById(R.id.shiroHansoku);
+                    ippon.setTextColor(Color.RED);
             }
 
         }
@@ -130,16 +153,16 @@ public class MainActivity extends AppCompatActivity {
 
         outState.putFloat(AKA_SCORE_KEY, akaScore);
         outState.putFloat(SHIRO_SCORE_KEY, shiroScore);
-        outState.putBoolean(CHANGE_COLOR_KEY_AKA_MEN, changeColorAkaMen);
-        outState.putBoolean(CHANGE_COLOR_KEY_AKA_KOTE, changeColorAkaKote);
-        outState.putBoolean(CHANGE_COLOR_KEY_AKA_DO, changeColorAkaDo);
-        outState.putBoolean(CHANGE_COLOR_KEY_AKA_TSUKI, changeColorAkaTsuki);
-        outState.putBoolean(CHANGE_COLOR_KEY_AKA_HANSOKU, changeColorAkaHansoku);
-        outState.putBoolean(CHANGE_COLOR_KEY_SHIRO_MEN, changeColorShiroMen);
-        outState.putBoolean(CHANGE_COLOR_KEY_SHIRO_KOTE, changeColorShiroKote);
-        outState.putBoolean(CHANGE_COLOR_KEY_SHIRO_DO, changeColorShiroDo);
-        outState.putBoolean(CHANGE_COLOR_KEY_SHIRO_TSUKI, changeColorShiroTsuki);
-        outState.putBoolean(CHANGE_COLOR_KEY_SHIRO_HANSOKU, changeColorShiroHansoku);
+        outState.putInt(CHANGE_COLOR_KEY_AKA_MEN, changeColorAkaMen);
+        outState.putInt(CHANGE_COLOR_KEY_AKA_KOTE, changeColorAkaKote);
+        outState.putInt(CHANGE_COLOR_KEY_AKA_DO, changeColorAkaDo);
+        outState.putInt(CHANGE_COLOR_KEY_AKA_TSUKI, changeColorAkaTsuki);
+        outState.putInt(CHANGE_COLOR_KEY_AKA_HANSOKU, changeColorAkaHansoku);
+        outState.putInt(CHANGE_COLOR_KEY_SHIRO_MEN, changeColorShiroMen);
+        outState.putInt(CHANGE_COLOR_KEY_SHIRO_KOTE, changeColorShiroKote);
+        outState.putInt(CHANGE_COLOR_KEY_SHIRO_DO, changeColorShiroDo);
+        outState.putInt(CHANGE_COLOR_KEY_SHIRO_TSUKI, changeColorShiroTsuki);
+        outState.putInt(CHANGE_COLOR_KEY_SHIRO_HANSOKU, changeColorShiroHansoku);
 
     }
 
@@ -157,17 +180,17 @@ public class MainActivity extends AppCompatActivity {
         displayForAka((int) akaScore);
         displayForShiro((int) shiroScore);
 
-        //set all booleans to false.
-        changeColorAkaMen = false;
-        changeColorAkaKote = false;
-        changeColorAkaDo = false;
-        changeColorAkaTsuki = false;
-        changeColorAkaHansoku = false;
-        changeColorShiroMen = false;
-        changeColorShiroKote = false;
-        changeColorShiroDo = false;
-        changeColorShiroTsuki = false;
-        changeColorShiroHansoku = false;
+        //set all integers to zero.
+        changeColorAkaMen = 0;
+        changeColorAkaKote = 0;
+        changeColorAkaDo = 0;
+        changeColorAkaTsuki = 0;
+        changeColorAkaHansoku = 0;
+        changeColorShiroMen = 0;
+        changeColorShiroKote = 0;
+        changeColorShiroDo = 0;
+        changeColorShiroTsuki = 0;
+        changeColorShiroHansoku = 0;
 
         //change all text color to black
         Button btnAkaMen = findViewById(R.id.akaMen);
@@ -207,7 +230,7 @@ public class MainActivity extends AppCompatActivity {
 
         } else if (akaScore < 2) {
             akaScore = akaScore + 1;
-            changeColorAkaMen = true;
+            changeColorAkaMen = 1;
             ((Button) v).setTextColor(Color.RED);
             displayForAka((int) akaScore);
 
@@ -231,7 +254,7 @@ public class MainActivity extends AppCompatActivity {
 
         } else if (akaScore < 2) {
             akaScore = akaScore + 1;
-            changeColorAkaKote = true;
+            changeColorAkaKote = 1;
             ((Button) v).setTextColor(Color.RED);
             displayForAka((int) akaScore);
 
@@ -255,7 +278,7 @@ public class MainActivity extends AppCompatActivity {
 
         } else if (akaScore < 2) {
             akaScore = akaScore + 1;
-            changeColorAkaDo = true;
+            changeColorAkaDo = 1;
             ((Button) v).setTextColor(Color.RED);
             displayForAka((int) akaScore);
 
@@ -279,7 +302,7 @@ public class MainActivity extends AppCompatActivity {
 
         } else if (akaScore < 2) {
             akaScore = akaScore + 1;
-            changeColorAkaTsuki = true;
+            changeColorAkaTsuki = 1;
             ((Button) v).setTextColor(Color.RED);
             displayForAka((int) akaScore);
 
@@ -303,7 +326,7 @@ public class MainActivity extends AppCompatActivity {
 
         } else if (akaScore < 2) {
             akaScore = akaScore + 0.5f;
-            changeColorAkaHansoku = true;
+            changeColorAkaHansoku = 1;
             ((Button) v).setTextColor(Color.RED);
             displayForAka((int) akaScore);
 
@@ -331,7 +354,7 @@ public class MainActivity extends AppCompatActivity {
 
         } else if (shiroScore < 2) {
             shiroScore = shiroScore + 1;
-            changeColorShiroMen = true;
+            changeColorShiroMen = 1;
             ((Button) v).setTextColor(Color.RED);
             displayForShiro((int) shiroScore);
 
@@ -355,7 +378,7 @@ public class MainActivity extends AppCompatActivity {
 
         } else if (shiroScore < 2) {
             shiroScore = shiroScore + 1;
-            changeColorShiroKote = true;
+            changeColorShiroKote = 1;
             ((Button) v).setTextColor(Color.RED);
             displayForShiro((int) shiroScore);
 
@@ -379,7 +402,7 @@ public class MainActivity extends AppCompatActivity {
 
         } else if (shiroScore < 2) {
             shiroScore = shiroScore + 1;
-            changeColorShiroDo = true;
+            changeColorShiroDo = 1;
             ((Button) v).setTextColor(Color.RED);
             displayForShiro((int) shiroScore);
 
@@ -403,7 +426,7 @@ public class MainActivity extends AppCompatActivity {
 
         } else if (shiroScore < 2) {
             shiroScore = shiroScore + 1;
-            changeColorShiroTsuki = true;
+            changeColorShiroTsuki = 1;
             ((Button) v).setTextColor(Color.RED);
             displayForShiro((int) shiroScore);
 
@@ -427,7 +450,7 @@ public class MainActivity extends AppCompatActivity {
 
         } else if (shiroScore < 2) {
             shiroScore = shiroScore + 0.5f;
-            changeColorShiroHansoku = true;
+            changeColorShiroHansoku = 1;
             ((Button) v).setTextColor(Color.RED);
             displayForShiro((int) shiroScore);
 
